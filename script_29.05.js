@@ -52,3 +52,47 @@ button.addEventListener("click", function() {
 });
 
 content.appendChild(button);
+
+// Самостоятельная работа
+// 1
+const dropdownItem = document.querySelectorAll('.dropdown-item');
+
+dropdownItem.forEach(item => {
+  item.classList.add('super-dropdown');
+});
+
+// 2
+let btnEl = document.querySelector('.btn');
+if (btnEl) { 
+    btnEl.classList.toggle('btn-secondary'); 
+}
+
+// 3
+let menuEl = document.querySelector('.menu.dropdown-menu');
+if (menuEl) { 
+    menuEl.classList.remove('dropdown-menu');
+}
+
+// 4
+let dropdownDiv = document.querySelector('.dropdown');
+if (dropdownDiv) {
+    dropdownDiv.insertAdjacentHTML('afterend', '<a href="#">link</a>');
+}
+
+// 5
+let dropdownMenuButton = document.getElementById('dropdownMenuButton');
+if (dropdownMenuButton) {
+    dropdownMenuButton.id = 'superDropdown';
+}
+
+// 6
+let labelledElement = document.querySelector('[aria-labelledby="dropdownMenuButton"]');
+if (labelledElement) {
+    labelledElement.dataset.dd = 3;
+}
+
+// 7
+let toggleElement = document.querySelector('.dropdown-toggle');
+if (toggleElement) {
+    toggleElement.removeAttribute('type');
+}
