@@ -30,6 +30,9 @@
     <button id="classAddButton">Добавить класс</button>
     <style> /* Класс "click" */ .click {font-size: 20px;} </style>
     
+Задание 5
+<div class="content"></div>
+    
     <script>
     //1
     document.addEventListener("DOMContentLoaded", function() {
@@ -128,6 +131,17 @@ document.getElementById('removeFirstButton').addEventListener('click', function(
 document.getElementById('classAddButton').addEventListener('click', function() {
     let lastItem = listItems.lastElementChild;
     lastItem.classList.toggle('click');
+});
+
+    //5
+    let contentDiv = document.querySelector('.content'); 
+
+    let contentButton = document.createElement('button');
+    contentButton.textContent = 'Отправить'; 
+    contentDiv.appendChild(contentButton); 
+
+    contentButton.addEventListener('click', function() { 
+    this.textContent = 'Текст отправлен'; 
 });
         
 </script>
