@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лекция 8</title>
+</head>
+<body>
+<p><b>Практика</b></p>
+  Задание 1
+    <button id="myButton" onclick="click()>Кликабельно</button>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    console.log("страница загрузилась");
+    });
+      
+    function click() {
+    console.log('событие onclick');
+    }
+      
+    const myButton = document.getElementById('myButton');
+      
+    myButton.onclick = function () {
+    console.log('событие onclick');
+};
+      
+myButton.addEventListener('click', function() {
+    console.log('событие addEventListener');
+    </script>
+</body>
+</html>
