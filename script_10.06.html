@@ -16,6 +16,7 @@
     <button id="3">3</button>
 
 Задание 3
+    <button id="titleButton">Новый заголовок</button>
     
     <script>
     //1
@@ -69,6 +70,34 @@ myButton.addEventListener('click', function() {
     document.body.appendChild(newButton2);
 
     //3
+    let titleButton = document.getElementById('titleButton');
+    titleButton. addEventListener('click', function(){
+    let newH1 = document.createElement('h1');
+    newH1.textContent = 'Новый заголовок';
+    let parentNode = titleButton.parentNode;
+    parentNode.insertBefore(newH1, titleButton.nextSibling);
+    });
+
+    let deleteButton = document.createElement('button');
+    deleteButton.id = 'deleteTitle';
+    deleteButton.textContent = 'Удалить заголовок';
+    document.body.appendChild(deleteButton);
+    deleteButton.addEventListener('click', function() { 
+    let existingTitle = document.querySelector('h1'); 
+    if (existingTitle) { 
+    existingTitle.remove();
+    } 
+    });
+
+    let newButton3 = document.createElement('button'); 
+    newButton3.textContent = 'Кнопка'; 
+    document.body.appendChild(newButton3); 
+    newButton3.addEventListener('mouseover', function() {
+    console.log('Вы навели на данную кнопку'); 
+    });
+    newButton3.addEventListener('mouseout', function() {
+    console.log('Наведения на кнопку больше нет');
+    }); 
     </script>
 </body>
 </html>
