@@ -17,6 +17,18 @@
 
 Задание 3
     <button id="titleButton">Новый заголовок</button>
+
+Задание 4
+    <ul id="listItems">
+        <li>Элемент 1</li>
+        <li>Элемент 2</li>
+        <li>Элемент 3</li>
+    </ul>
+
+    <button id="addItemButton">Добавить элемент</button>
+    <button id="removeFirstButton">Удалить первый элемент</button>
+    <button id="classAddButton">Добавить класс</button>
+    <style> /* Класс "click" */ .click {font-size: 20px;} </style>
     
     <script>
     //1
@@ -98,6 +110,26 @@ myButton.addEventListener('click', function() {
     newButton3.addEventListener('mouseout', function() {
     console.log('Наведения на кнопку больше нет');
     }); 
-    </script>
+
+    //4
+    let listItems = document.getElementById('listItems');
+document.getElementById('addItemButton').addEventListener('click', function() {
+    let newLi = document.createElement('li');
+    newLi.textContent = 'Новый элемент';
+    listItems.appendChild(newLi);
+});
+
+document.getElementById('removeFirstButton').addEventListener('click', function() {
+    if (listItems.children.length > 0) {
+        listItems.removeChild(listItems.firstElementChild);
+    }
+});
+
+document.getElementById('classAddButton').addEventListener('click', function() {
+    let lastItem = listItems.lastElementChild;
+    lastItem.classList.toggle('click');
+});
+        
+</script>
 </body>
 </html>
