@@ -7,9 +7,18 @@
 </head>
 <body>
     <p><b>Практика</b></p>
-  Задание 1
+Задание 1
     <button id="myButton">Кликабельно</button>
+
+Задание 2
+    <button id="1">1</button>
+    <button id="2">2</button>
+    <button id="3">3</button>
+
+Задание 3
+    
     <script>
+    //1
     document.addEventListener("DOMContentLoaded", function() {
     console.log("страница загрузилась");
     });
@@ -27,6 +36,39 @@
 myButton.addEventListener('click', function() {
     console.log('событие addEventListener');
 });
+
+    //2
+    let btn1 = document.getElementById('1');
+    let btn2 = document.getElementById('2');
+    let btn3 = document.getElementById('3');
+    btn1.addEventListener('click', function()
+    { console.log('Нажата кнопка 1');
+    }); 
+    btn2.addEventListener('click', function() 
+    { console.log('Нажата кнопка 2'); 
+    }); 
+    btn3.addEventListener('click', function() 
+    { console.log('Нажата кнопка 3');
+    });
+
+    let newButton = document.createElement('button');
+    let count = 0;
+    newButton.id = 'countButton';
+    newButton.textContent = '4';
+    newButton.addEventListener('click', function() {
+    count++;
+    console.log(`Вы нажали на кнопку ${count}`);
+    });
+    document.body.appendChild(newButton);
+
+    let newButton2 = document.createElement('button'); 
+    newButton2.id = 'changeTextButton'; newButton2.textContent = '5';
+    newButton2.addEventListener('click', function() { 
+    this.textContent = 'Вы нажали на эту кнопку';
+    }); 
+    document.body.appendChild(newButton2);
+
+    //3
     </script>
 </body>
 </html>
