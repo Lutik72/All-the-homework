@@ -14,7 +14,23 @@
     <button type="submit">Отправить</button>
 </form>
 
+    Задание 2
+<h2>Выберите напиток:</h2>
+<label>
+  <input type="radio" name="drink" value="чай" id="tea">
+  Чай
+</label>
+<br>
+<label>
+  <input type="radio" name="drink" value="кофе" id="coffee">
+  Кофе
+</label>
+<br><br>
+<button id="submitBtn">Отправить</button>
+
+    
 <script>
+    //задание 1
     const inputEl = document.querySelector('.check');
     const formEl = document.querySelector('.form')
     const errorMessage = document.getElementById('errorMessage');
@@ -33,6 +49,20 @@
             a.preventDefault();
         }
     });
+
+    //задание 2
+    document.getElementById('submitBtn').addEventListener('click', function() {
+    const tea = document.getElementById('tea');
+    const coffee = document.getElementById('coffee');
+
+    if (tea.checked) {
+      alert('Чай закончился');
+    } else if (coffee.checked) {
+      alert('Кофе закончился');
+    } else {
+      alert('Пожалуйста, выберите напиток');
+    }
+  });
 </script>
 </body>
 </html>
