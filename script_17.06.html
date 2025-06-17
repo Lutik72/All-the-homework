@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 9</title>
+</head>
+<body>
+    Задание 1
+<form class="form">
+    <h2>Форма</h2>
+    <input type="checkbox" class="check" id="checkbox">Согласен с условиями<br>
+    <span id="errorMessage" style="color: red; display: none;">Необходимо согласиться с условиями</span><br>
+    <button type="submit">Отправить</button>
+</form>
+
+<script>
+    const inputEl = document.querySelector('.check');
+    const formEl = document.querySelector('.form')
+    const errorMessage = document.getElementById('errorMessage');
+
+        inputEl.addEventListener('click', function(a){
+        const target = a.target;
+        console.log(target.checked);
+    });
+
+    formEl.addEventListener('submit', function(a){
+        if (inputEl.checked) {
+            console.log('Супер!')
+        } else {
+            errorMessage.style.display = 'block'; // показываем сообщение об ошибке
+            console.log('Вы забыли поставить галочку')
+            a.preventDefault();
+        }
+    });
+</script>
+</body>
+</html>
